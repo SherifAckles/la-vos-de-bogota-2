@@ -12,16 +12,16 @@ function HeroSection() {
         <Row>
           <Col xs={12} md={6} className="hero-text-container">
             <header>
-              
+
               <h1>La Voz de Bogota,La mejor estación de radio para comenzar el día.</h1>
               <h2>Let's start your day</h2>
-              
+
             </header>
           </Col>
           <Col xs={12} md={5} className="offset-md-1">
             <main>
               <picture>
-                
+
                 <img src={HeroPhoto} alt="hero-photo" className="hero-container-img" fluid="true" />
               </picture>
             </main>

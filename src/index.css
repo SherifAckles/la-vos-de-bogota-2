@@ -15,13 +15,12 @@
       }
   
       section{
-        margin-top: 6rem;
+        margin-top: 10rem !important;
         
       }
 
-      @media (max-width: 767px) { 
-        section {
-          margin-top: 10rem; 
-        }
+      img {
+        overflow: hidden!important;
       }
+
       

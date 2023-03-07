@@ -1,66 +1,94 @@
-import React, { useState, useRef } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import { BsFillPlayCircleFill } from 'react-icons/bs';
-import Logo from '../../images/logo.svg';
-import HiddenImage from '../../images/radio-announcer.png'; 
-import './top-navbar.css';
+import React, { useState, useRef, useEffect } from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import { BsFillPlayCircleFill } from "react-icons/bs";
+import { AiFillPauseCircle } from "react-icons/ai";
+import LogoImage from "../../images/logo.svg";
+import RadioAnnouncerImage from "../../images/radio-announcer.png";
+import "./top-navbar.scss";
 
+function Logo() {
+  return (
+    <Navbar.Brand href="/">
+      <img
+        src={LogoImage}
+        style={{ maxWidth: "100%" }}
+        className="d-inline-block align-top header-logo"
+        alt="La Vos de Bogota"
+      />
+    </Navbar.Brand>
+  );
+}
+
+function RadioAnnouncer({ showImage }) {
+  return showImage && (
+    <img
+      src={RadioAnnouncerImage}
+      alt="hidden"
+      style={{ position: "absolute", left: "45%", right: "45%" }}
+      width="80"
+      height="80"
+    />
+  );
+}
+
+function PlayButton({ isPlaying, toggleImage, audioUrl }) {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]);
+
+  return (
+    <div className="col justify-content-between align-items-center text-white d-flex ">
+      
+      <div className="nav-name-tag">
+        <h5 className="m-0">930 AM Bogotá</h5>
+        <p className="">Música Y Más ALLá</p>
+      </div>
+
+      <button className="btn animated-btn btn-lg" onClick={toggleImage}>
+        Al Aire
+        <span>
+          {isPlaying ? (
+            <AiFillPauseCircle size="25px" />
+          ) : (
+            <BsFillPlayCircleFill size="25px" />
+          )}
+        </span>
+      </button>
+      <audio ref={audioRef} src={audioUrl} />
+    </div>
+  );
+}
 
 function TopNavbar() {
   const [showImage, setShowImage] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const audioRef = useRef(null);
-
   const toggleImage = () => {
-    setShowImage(!showImage);
-    if (audioRef.current.paused) {
-      audioRef.current.play();
-      setIsPlaying(true);
-    } else {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    }
+    setShowImage(prevState => !prevState);
+    setIsPlaying(prevState => !prevState);
   };
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <div className="container d-flex justify-content-center align-items-center">
-        <Navbar.Brand href="/">
-          <img
-            src={Logo}
-            style={{ maxWidth: '100%' }}
-            className="d-inline-block align-top header-logo"
-            alt="La Vos de Bogota"
-          />
-        </Navbar.Brand>
+        <Logo />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto"></Nav>
-          <div className="col justify-content-between align-items-center text-white d-flex">
-            <div className="nav-name-tag">
-              <h5 className="m-0">930 AM Bogotá</h5>
-              <p className="">Música Y Más ALLá</p>
-            </div>
-            {showImage && (
-              <img
-                src={HiddenImage}
-                alt="hidden"
-                className="hidden-image"
-                width="80"
-                height="80"
-              />
-            )}
-            <button className="btn animated-btn btn-lg" onClick={toggleImage}>
-              Al Aire
-              <span>
-                <BsFillPlayCircleFill size="25px" />
-              </span>
-            </button>
-            <audio ref={audioRef} src="https://tupanel.info:2000/stream/lavozdebogota/stream"></audio>
-          </div>
+          <PlayButton
+            isPlaying={isPlaying}
+            toggleImage={toggleImage}
+            audioUrl="https://tupanel.info:2000/stream/lavozdebogota"
+          />
         </Navbar.Collapse>
       </div>
+      <RadioAnnouncer showImage={showImage} />
     </Navbar>
   );
 }
