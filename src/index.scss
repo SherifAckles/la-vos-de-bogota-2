@@ -1,8 +1,6 @@
-:root {
-  --bg-color: #0C172D;
-  --text-color: #FFFFFF;
+:root{
+  --text-color: white
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +14,9 @@ li {
 
 body {
   scroll-snap-type: y mandatory !important;
+  text-align: center;
+  
+
   scroll-behavior: smooth !important;
   overflow-y: auto !important;
   scroll-snap-align: center !important;
