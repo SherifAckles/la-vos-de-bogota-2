@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { AiFillPauseCircle } from "react-icons/ai";
-import LogoImage from "../../images/logo.svg";
+import LogoImage from "../../images/logo.png";
 import RadioAnnouncerImage from "../../images/radio-announcer.png";
 import "./top-navbar.scss";
 
@@ -11,8 +11,8 @@ function Logo() {
     <Navbar.Brand href="/">
       <img
         src={LogoImage}
-        style={{ maxWidth: "100%" }}
-        className="d-inline-block align-top header-logo"
+        style={{ width: "150px", height: "auto" }}
+        
         alt="La Vos de Bogota"
       />
     </Navbar.Brand>
