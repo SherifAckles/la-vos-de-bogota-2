@@ -11,31 +11,33 @@ function Logo() {
     <Navbar.Brand href="/">
       <img
         src={LogoImage}
-        style={{ width: "150px", height: "auto" }}
-        
+        className="logo"
         alt="La Vos de Bogota"
       />
     </Navbar.Brand>
   );
 }
 
+
+
 function RadioAnnouncer({ showImage }) {
   return showImage && (
     <img
       src={RadioAnnouncerImage}
       alt="hidden"
-      style={{
-        position: "absolute",
-        left: "50%",
-        transform: "translateX(-50%) translateY(45px)", // Move the image 20px down
-        width: "80px",
-        height: "80px",
-        "@media (max-width: 768px)": {
-          left: "50%",
-          bottom: "0",
+      className="radio-announcer"
+      // style={{
+      //   position: "absolute",
+      //   left: "50%",
+      //   transform: "translateX(-50%) translateY(45px)", // Move the image 20px down
+      //   width: "80px",
+      //   height: "80px",
+      //   "@media (max-width: 768px)": {
+      //     left: "50%",
+      //     bottom: "10rem",
          
-        },
-      }}
+      //   },
+      // }}
     />
   );
 }

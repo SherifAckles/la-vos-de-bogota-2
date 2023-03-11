@@ -10,6 +10,21 @@
   max-height: 600px;
 }
 
+
+.logo{
+  width: 200px;
+}
+
+
+.radio-announcer{
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+
 .animated-btn {
   color: #fff !important;
   position: relative;
@@ -45,5 +60,12 @@
 }
 
 
+@media screen and (max-width: 767px) {
+  .radio-announcer{
+    left: 45%;
+    top: 70%;
+  }
+  
+}
 
 
