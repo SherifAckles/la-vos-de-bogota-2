@@ -6,10 +6,8 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none !important;
-  text-align: center;
   overflow: hidden !important;
-  justify-content: center !important;
-
+  
   scroll-behavior: smooth !important;
   overflow-y: auto !important;
   scrollbar-width: none;
@@ -24,7 +22,9 @@ li {
 }
 
 body {
-  
+  display: flex !important;
+  text-align: center !important;
+  justify-content: center !important;
   
   color: var(--text-color) !important;
   background-image: url(./images/blob-upgrade.svg);
