@@ -5,7 +5,7 @@ import "./footer.css"
 
 function Footer() {
   return (
-    <section className="footer">
+    <section className="footer bg-black">
       <div className="footer-top text-center ">
         <Container>
           <Row  className="justify-content-center">

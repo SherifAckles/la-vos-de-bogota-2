@@ -24,12 +24,23 @@ function RadioAnnouncer({ showImage }) {
     <img
       src={RadioAnnouncerImage}
       alt="hidden"
-      style={{ position: "absolute", left: "45%", right: "45%" }}
-      width="80"
-      height="80"
+      style={{
+        position: "absolute",
+        left: "50%",
+        transform: "translateX(-50%) translateY(45px)", // Move the image 20px down
+        width: "80px",
+        height: "80px",
+        "@media (max-width: 768px)": {
+          left: "50%",
+          bottom: "0",
+         
+        },
+      }}
     />
   );
 }
+
+
 
 function PlayButton({ isPlaying, toggleImage, audioUrl }) {
   const audioRef = useRef(null);
@@ -76,7 +87,7 @@ function TopNavbar() {
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-      <div className="container d-flex justify-content-center align-items-center">
+      <div className="container d-flex justify-content-between align-items-center">
         <Logo />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -92,5 +103,7 @@ function TopNavbar() {
     </Navbar>
   );
 }
+
+
 
 export default TopNavbar;

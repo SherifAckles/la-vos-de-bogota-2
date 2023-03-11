@@ -29,6 +29,7 @@ body {
   background-image: url(./images/blob-upgrade.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  // background-position: center;
   
   
   font-family: 'Prompt', sans-serif !important;
@@ -36,7 +37,7 @@ body {
 }
 
 section {
-   margin-top: 4rem !important; 
+   margin-top: 12rem !important; 
   position: relative !important;
   display: flex !important;
   flex-direction: column !important;
