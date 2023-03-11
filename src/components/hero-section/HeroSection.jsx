@@ -14,7 +14,7 @@ function HeroSection() {
             <header>
 
               <h1>La Voz de Bogota,La mejor estación de radio para comenzar el día.</h1>
-              <h2>Let's start your day</h2>
+              <h2>Comencemos tu día ahora</h2>
 
             </header>
           </Col>

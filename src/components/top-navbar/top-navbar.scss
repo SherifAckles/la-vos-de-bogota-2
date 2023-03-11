@@ -63,7 +63,8 @@
 @media screen and (max-width: 767px) {
   .radio-announcer{
     left: 45%;
-    top: 70%;
+    top: 60%;
+    overflow: hidden !important;
   }
   
 }

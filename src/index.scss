@@ -6,24 +6,25 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none !important;
+  text-align: center;
+  overflow: hidden !important;
+  justify-content: center !important;
+
+  scroll-behavior: smooth !important;
+  overflow-y: auto !important;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
+
 
 li {
   list-style: none;
 }
 
 body {
-  scroll-snap-type: y mandatory !important;
-  text-align: center;
   
-
-  scroll-behavior: smooth !important;
-  overflow-y: auto !important;
-  scroll-snap-align: center !important;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
   
   color: var(--text-color) !important;
   background-image: url(./images/blob-upgrade.svg);
