@@ -6,33 +6,9 @@ import LogoImage from "../../images/logo.png";
 import RadioAnnouncerImage from "../../images/radio-announcer.png";
 import "./top-navbar.scss";
 
-function Logo() {
-  return (
-    <Navbar.Brand href="/">
-      <img
-        src={LogoImage}
-        className="logo"
-        alt="La Vos de Bogota"
-      />
-    </Navbar.Brand>
-  );
-}
-
-
-
-function RadioAnnouncer({ showImage }) {
-  return showImage && (
-    <img
-      src={RadioAnnouncerImage}
-      alt="hidden"
-      className="radio-announcer"
-    />
-  );
-}
-
-
-
-function PlayButton({ isPlaying, toggleImage, audioUrl }) {
+function TopNavbar() {
+  const [showImage, setShowImage] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -43,33 +19,6 @@ function PlayButton({ isPlaying, toggleImage, audioUrl }) {
     }
   }, [isPlaying]);
 
-  return (
-    <div className="col justify-content-between align-items-center text-white d-flex ">
-
-      <div className="nav-name-tag">
-        <h5 className="m-0">930 AM Bogotá</h5>
-        <p className="">Música Y Más ALLá</p>
-      </div>
-
-      <button className="btn animated-btn btn-lg" onClick={toggleImage}>
-        Al Aire
-        <span>
-          {isPlaying ? (
-            <AiFillPauseCircle size="25px" />
-          ) : (
-            <BsFillPlayCircleFill size="25px" />
-          )}
-        </span>
-      </button>
-      <audio ref={audioRef} src={audioUrl} />
-    </div>
-  );
-}
-
-function TopNavbar() {
-  const [showImage, setShowImage] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-
   const toggleImage = () => {
     setShowImage(prevState => !prevState);
     setIsPlaying(prevState => !prevState);
@@ -78,22 +27,47 @@ function TopNavbar() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <div className="container d-flex justify-content-between align-items-center">
-        <Logo />
+        <Navbar.Brand href="/">
+        <img src={LogoImage} className="logo" alt="La Voz de Bogota" width="300" />
+
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto"></Nav>
-          <PlayButton
-            isPlaying={isPlaying}
-            toggleImage={toggleImage}
-            audioUrl="https://tupanel.info:2000/stream/lavozdebogota"
-          />
+          <div className="col justify-content-between align-items-center text-white d-flex ">
+            <div className="nav-name-tag">
+              <h5 className="m-0">930 AM Bogotá</h5>
+              <p className="">Música Y Más ALLá</p>
+            </div>
+            <button
+              className="btn animated-btn btn-lg"
+              onClick={toggleImage}
+            >
+              Al Aire
+              <span>
+                {isPlaying ? (
+                  <AiFillPauseCircle size="25px" />
+                ) : (
+                  <BsFillPlayCircleFill size="25px" />
+                )}
+              </span>
+            </button>
+            <audio
+              ref={audioRef}
+              src="https://tupanel.info:2000/stream/lavozdebogota"
+            />
+          </div>
         </Navbar.Collapse>
       </div>
-      <RadioAnnouncer showImage={showImage} />
+      {showImage && (
+        <img
+          src={RadioAnnouncerImage}
+          alt="hidden"
+          className="radio-announcer"
+        />
+      )}
     </Navbar>
   );
 }
-
-
 
 export default TopNavbar;
