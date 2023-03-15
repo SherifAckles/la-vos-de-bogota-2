@@ -25,10 +25,11 @@ function TopNavbar() {
   };
 
   return (
+    <section className="navbar">
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <div className="container d-flex justify-content-between align-items-center">
         <Navbar.Brand href="/">
-        <img src={LogoImage} className="logo" alt="La Voz de Bogota" width="300" />
+        <img src={LogoImage} className="logo" alt="La Voz de Bogota" width="200" />
 
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -66,7 +67,8 @@ function TopNavbar() {
           className="radio-announcer"
         />
       )}
-    </Navbar>
+      </Navbar>
+      </section>
   );
 }
 

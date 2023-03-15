@@ -22,15 +22,15 @@ li {
 }
 
 body {
-  display: flex !important;
+   font-family: Roboto, Helvetica, Arial, sans-serif !important;
   text-align: center !important;
-  justify-content: center !important;
+  
   
   color: var(--text-color) !important;
   background-image: url(./images/blob-upgrade.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  // background-position: center;
+   background-position: center;
   
   
   font-family: 'Prompt', sans-serif !important;
@@ -38,14 +38,14 @@ body {
 }
 
 section {
-   margin-top: 12rem !important; 
+   margin-top: 1rem !important; 
   position: relative !important;
-  display: flex !important;
+  // display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
 justify-content: center !important;
 //  height: 100vh !important;
-  padding-top: 100px !important;
+  padding-top: 80px !important;
   
 
 }

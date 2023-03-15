@@ -1,20 +1,17 @@
-.nav-bg{
-  background-image:url(../../images/header-bg.jpg) ;
+
+
+.nav-bg {
+  background-image: url(../../images/header-bg.jpg);
   background-repeat: no-repeat;
-  
 }
 
 .navbar-dark {
-  background-image: linear-gradient(to bottom, #0C172D, #000000) !important;
+  background-image: linear-gradient(to bottom, #0c172d, #000000) !important;
   max-width: 1700px;
   max-height: 600px;
 }
 
-
-
-
-
-.radio-announcer{
+.radio-announcer {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -22,14 +19,11 @@
   top: 50%;
 }
 
-
 .animated-btn {
   color: #fff !important;
   position: relative;
-  /* CHANGE THE RIGHT WHEN MAKING BREAKPOINTS FOR OTHER DEVICES */
-  /* right: 14rem; */
   overflow: hidden;
-  border: 1px solid #FF0066 !important;
+  border: 1px solid #ff0066 !important;
   padding: 0.5rem 1rem !important;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -47,7 +41,7 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #FF0066;
+    background-color: #ff0066;
     transition: all 0.5s;
     z-index: -1;
   }
@@ -57,16 +51,13 @@
   }
 }
 
-
 @media screen and (max-width: 767px) {
-  .radio-announcer{
+  .radio-announcer {
     left: 45%;
     top: 60%;
     overflow: hidden !important;
   }
-  .logo{
+  .logo {
     width: 150px !important;
   }
 }
-
-

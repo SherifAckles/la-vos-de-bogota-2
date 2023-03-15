@@ -1,13 +1,9 @@
-  
-.podcast-topics-container{
-    display: flex !important;
-    flex-direction: column !important;
-    }
-    
-    
-    .card-section{
-      
-      margin-top: 6rem !important;
-    }
-    
+.podcast-topics-container {
+  display: flex !important;
+  flex-direction: column !important;
+  padding-top: 0 !important;
+}
 
+.card-section {
+  margin-top: 6rem !important;
+}
