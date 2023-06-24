@@ -35,10 +35,15 @@ function PodcastTopics({ podcastCards }) {
     <section className="podcast-topics-container text-dark text-center ">
       <Container>
         <Row>
-          <Col xs={12} md={6} sm={12} className="hero-container-img">
+          <Col xs={12} md={6} sm={12} className="hero-container">
             <main>
               <picture>
-                <img src={TopicsHero} alt="hero-photo" fluid="true" />
+                <img
+                  src={TopicsHero}
+                  alt="hero-photo"
+                  fluid="true"
+                  className="hero-img"
+                />
               </picture>
             </main>
           </Col>
