@@ -2,7 +2,7 @@ import React from 'react'
 import TopNavbar from "./components/top-navbar/TopNavbar"
 import HeroSection from "./components/hero-section/HeroSection"
 import PodcastTopics from "./components/podcast-topics/PodcastTopics"
-import Programación from "./components/programación/Programación"
+import PodcastSchedule from "./components/programación/PodcastSchedule";
 import Footer from "./components/footer/Footer"
 
 
@@ -39,10 +39,10 @@ function App() {
       <TopNavbar />
       <HeroSection />
       <PodcastTopics podcastCards={podcastCards} />
-      <Programación />
+      <PodcastSchedule />
       <Footer />
     </div>
-  )
+  );
 }
 
 export default App

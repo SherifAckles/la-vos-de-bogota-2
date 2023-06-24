@@ -1,0 +1,73 @@
+.podcast-schedule {
+  position: relative;
+  padding: 0 20%;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .episode-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 1rem;
+    background: #073d77;
+    border-radius: 12%;
+
+    .episode {
+      background-color: #cac4c4;
+      padding: 20px;
+      border-radius: 4px;
+      color: #3a46af;
+
+      .time {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .program {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .profile {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .wavy-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 20, 39, 1) 100%,
+      rgba(10, 20, 39, 2) 50%,
+      rgba(10, 20, 39, 1) 100%
+    );
+    transform: skewY(-12deg);
+    transform-origin: bottom;
+    animation: wavy-animation 8s linear infinite;
+
+    @keyframes wavy-animation {
+      0% {
+        background-position: 0 100%;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+  }
+}

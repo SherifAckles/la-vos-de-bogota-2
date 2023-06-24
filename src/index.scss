@@ -1,5 +1,5 @@
-:root{
-  --text-color: white
+:root {
+  --text-color: white;
 }
 * {
   margin: 0;
@@ -7,7 +7,7 @@
   box-sizing: border-box;
   text-decoration: none !important;
   overflow: hidden !important;
-  
+
   scroll-behavior: smooth !important;
   overflow-y: auto !important;
   scrollbar-width: none;
@@ -16,37 +16,36 @@
   }
 }
 
-
 li {
   list-style: none;
 }
 
 body {
-   font-family: Roboto, Helvetica, Arial, sans-serif !important;
+  font-family: Roboto, Helvetica, Arial, sans-serif !important;
   text-align: center !important;
-  
-  
+
   color: var(--text-color) !important;
   background-image: url(./images/blob-upgrade.svg);
   background-repeat: no-repeat;
   background-size: cover;
-   background-position: center;
-  
-  
-  font-family: 'Prompt', sans-serif !important;
+  background-position: center;
+
+  font-family: "Prompt", sans-serif !important;
   overflow-x: hidden !important;
 }
 
 section {
-   margin-top: 1rem !important; 
+  margin-top: 1rem !important;
   position: relative !important;
-  // display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-justify-content: center !important;
-//  height: 100vh !important;
-  padding-top: 80px !important;
-  
+  justify-content: center !important;
 
+  padding-top: 80px !important;
+  @media only screen and (max-width: 820px) {
+    padding-top: 8rem !important;
+  }
 }
+ 
+
 
