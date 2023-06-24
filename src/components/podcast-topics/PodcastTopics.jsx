@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import TopicsHero from "../../images/topics-hero-img.png";
 import "./podcast-topics.css";
 
-function PodcastTopics({ podcastCards }) {
+function PodcastTopics() {
   const topics = [
     {
       title: "Salud y Bienestar",
